@@ -1,7 +1,6 @@
 package com.catacore.richtexteditor.popup.views
 
 import android.app.Activity
-import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +23,7 @@ class SavePopupViewMvcImpl(private val activity: Activity) : PopupWindow(activit
 
         val inflator = activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-        contentView = inflator.inflate(R.layout.pmma_popup_layout, null, false)
+        contentView = inflator.inflate(R.layout.save_yes_no_popup_layout, null, false)
         height = LinearLayout.LayoutParams.MATCH_PARENT
         width = LinearLayout.LayoutParams.MATCH_PARENT
 
