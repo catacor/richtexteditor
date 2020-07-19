@@ -1,0 +1,3 @@
+include ':richtexteditor'
+include ':app'
+rootProject.name = "Sample"
