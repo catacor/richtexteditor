@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.catacore.richtexteditor.R;
 import com.catacore.richtexteditor.adapter.FontSettingAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.Arrays;
 import java.util.List;
@@ -66,8 +68,9 @@ public class FontSettingFragment extends Fragment {
         rvContainer.setLayoutManager(new LinearLayoutManager(getContext()));
 
         mAdapter = new FontSettingAdapter(dataSourceList);
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
                 if (mOnResultListener != null) {
                     mOnResultListener.onResult(dataSourceList.get(position));
                     FragmentManager fm = getFragmentManager();
